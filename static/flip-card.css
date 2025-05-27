@@ -1,0 +1,160 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(45deg, #061de3, #e306ca);
+    font-family: helvetica, sans-serif;
+    color: rgb(211,211,211);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width: 350px;
+    height: 500px;
+    perspective: 800px;
+}
+
+.container:hover > .card{
+    cursor: pointer;
+    transform: rotateY(180deg);
+}
+
+.card{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: transform 1500ms;
+    transform-style: preserve-3d;
+}
+
+.front,
+.back{
+    height: 100%;
+    width: 100%;
+    border-radius: 2rem;
+    box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+
+.front{
+    transform: rotateY(0deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+
+.back{
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+.user{
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: color-mix(in srgb-linear, #061de3  30%, #e306ca 70%);
+}
+
+i{
+    border: 1px solid #fff;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.balloon-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.balloon {
+  position: absolute;
+  bottom: -150px;
+  width: 40px;
+  height: 60px;
+  background: red;
+  border-radius: 50% 50% 45% 45%;
+  animation: fly 6s ease-in infinite;
+  opacity: 0.8;
+}
+
+.balloon::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 2px;
+  height: 20px;
+  background: black;
+}
+
+@keyframes fly {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+#start-btn, #copy-link-btn{
+  margin: 0; /* Remove the top and bottom margin */
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+  color: #000;
+  transition: background 0.3s ease;
+}
+
+
+/* Container for buttons at bottom */
+.buttons-container {
+  position: absolute; /* Position the container absolutely */
+  bottom: 20px; /* Place it 20px from the bottom */
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.home-btn{
+  text-decoration: none;
+  margin: 0; /* Remove the top and bottom margin */
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+  background: #fff;
+  box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+  color: #000;
+  transition: background 0.3s ease;
+}
