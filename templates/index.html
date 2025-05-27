@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flip Card - Enter Username</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <link rel="shortcut icon" href="{{ url_for('static', filename='cake.png') }}" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <meta property="og:title" content="🎂 Happy Birthday!" />
+  <meta property="og:description" content="Click to see your birthday surprise!" />
+  <meta property="og:image" content="https://yourdomain.com/static/preview.jpg" />
+  <meta property="og:url" content="https://yourdomain.com/card?name=..." />
+  <meta name="twitter:card" content="summary_large_image" />
+</head>
+<body>
+  <div class="error"></div>
+
+  <h1>Suprise Card</h1>
+  
+  <div class="entrance">
+    <input
+      type="text"
+      name="username"
+      id="username"
+      placeholder="Enter username"
+      autocomplete="off"
+    />
+    <button id="start-btn">Get Started</button>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
